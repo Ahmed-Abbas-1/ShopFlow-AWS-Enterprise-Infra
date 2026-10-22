@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shopflow-service
+  labels:
+    app: shopflow
+spec:
+  type: LoadBalancer
+  selector:
+    app: shopflow
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopflow-app
+  labels:
+    app: shopflow
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shopflow
+  template:
+    metadata:
+      labels:
+        app: shopflow
+    spec:
+      containers:
+      - name: shopflow-web
+        image: 624052199701.dkr.ecr.us-east-1.amazonaws.com/shopflow-dev-app:latest
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always

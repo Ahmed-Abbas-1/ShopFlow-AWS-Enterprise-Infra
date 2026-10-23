@@ -25,8 +25,10 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4
       with:
         role-to-assume: arn:aws:iam::624052199701:role/GitHubActions-OIDC-Role
-        aws-region: ${{ env.AWS_REGION }}
+        aws-region: us-east-1
         audience: sts.amazonaws.com
+        role-session-name: GitHubActionsSession
+        role-skip-session-tagging: true
 #    - name: Configure AWS Credentials
 #      uses: aws-actions/configure-aws-credentials@v4
 #      with:

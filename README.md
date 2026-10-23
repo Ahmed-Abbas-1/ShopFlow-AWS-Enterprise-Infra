@@ -53,7 +53,7 @@ By decoupling application deployment from infrastructure provisioning, this repo
 ## 🏛 2. Architecture Diagram
 
 <p align="center">
-  <img src="docs/images/project-diagram.png" width="100%">
+  <img src="assets/screenshots/project-diagram.png" width="100%">
   <br>
   <em><b>Figure 1:</b> System Architecture Diagram </em>
 </p>

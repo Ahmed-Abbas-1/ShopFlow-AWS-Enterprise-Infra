@@ -20,11 +20,10 @@ resource "aws_eks_node_group" "main" {
   node_role_arn   = var.node_role_arn
   subnet_ids      = var.subnet_ids
 
-  # تحديد نوع نظام التشغيل صراحةً ليتوافق مع الإصدار 1.30
   ami_type       = "AL2_x86_64"
   capacity_type  = "ON_DEMAND"
   
-  instance_types = ["t3.large"]
+  instance_types = ["t3.medium"]
 
   scaling_config {
     desired_size = 2

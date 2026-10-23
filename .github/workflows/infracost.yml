@@ -1,0 +1,35 @@
+name: Infracost FinOps
+
+on:
+  pull_request:
+    paths:
+      - 'terraform/**'
+
+jobs:
+  infracost:
+    name: Infracost Cost Estimate
+    runs-on: ubuntu-latest
+    
+    env:
+      working-directory: terraform/environments/dev
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Infracost
+        uses: infracost/actions/setup@v2
+        with:
+          api-key: ${{ secrets.INFRACOST_API_KEY }}
+
+      - name: Generate Infracost cost estimate baseline
+        run: |
+          infracost breakdown --path=${{ env.working-directory }} \
+                              --format=json \
+                              --out-file=/tmp/infracost-base.json
+
+      - name: Post Infracost Comment on PR
+        uses: infracost/actions/comment@v2
+        with:
+          path: /tmp/infracost-base.json
+          behavior: update

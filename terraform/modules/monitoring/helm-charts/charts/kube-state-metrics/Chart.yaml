@@ -1,0 +1,34 @@
+apiVersion: v2
+name: kube-state-metrics
+description: Install kube-state-metrics to generate and expose cluster-level metrics
+keywords:
+  - metric
+  - monitoring
+  - prometheus
+  - kubernetes
+type: application
+version: 8.6.0
+# renovate: github-releases=kubernetes/kube-state-metrics
+appVersion: 2.20.0
+home: https://github.com/kubernetes/kube-state-metrics/
+icon: https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg
+sources:
+  - https://github.com/kubernetes/kube-state-metrics/
+maintainers:
+  - name: tariq1890
+    email: tariq.ibrahim@mulesoft.com
+    url: https://github.com/tariq1890
+  - name: mrueg
+    email: manuel@rueg.eu
+    url: https://github.com/mrueg
+  - name: dotdc
+    email: david@0xdc.me
+    url: https://github.com/dotdc
+  - name: sebastiangaiser
+    email: git@gaiser.bayern
+    url: https://github.com/sebastiangaiser
+annotations:
+  "artifacthub.io/license": Apache-2.0
+  "artifacthub.io/links": |
+    - name: Chart Source
+      url: https://github.com/prometheus-community/helm-charts
